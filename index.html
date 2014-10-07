@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Streamverse</title>
+    <link href="index.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
+    <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+    <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+    <script src="ButtonControl.js"></script>
+    <script src="ui.js"></script>
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Rationale">
+    <link href='http://fonts.googleapis.com/css?family=Bowlby+One&effect=fire-animation' rel='stylesheet' type='text/css'>
+</head>
+
+<body>
+
+
+
+
+
+
+    <div id="topmenuWrapper">
+        <div id="contentWrapper">
+            <span id="logo"><img  src="img/logo.png"/></span>
+            <ul id="menubar">
+                <img id='gameicon' src='img/lol.ico'><li><a class="lol">League of Legends</a></li>
+                <img id='gameicon' src='img/sc2.ico'><li><a class="sc2">Starcraft 2 </a></li>
+                <img id='gameicon' src='img/dota.ico'><li><a class="dota2">Dota 2</a></li>
+                <img id='gameicon' src='img/wow.ico'><li><a class="wow">World of Warcraft</a></li>
+                <img id='gameicon' src='img/hearthstone.ico'><li><a class="hearthstone">Hearthstone</a></li>
+            </ul>
+
+            <div class="searchbar">
+                <label for="searchinput">Search </label>
+                <input id="searchinput" />
+
+            </div>
+            <a href="https://www.facebook.com/streamverse">
+                <img id="fbicon" src="img/facebookicon.png" /></a>
+            <div class="fb-like" data-href="https://www.facebook.com/streamverse" data-width="450" data-layout="button_count" data-show-faces="true" data-send="false"></div>
+
+        </div>
+        <!--contentWrapper END -->
+        <div id="togglechat">Toggle Chat</div>
+    </div>
+    <!--topmenuWrapper END -->
+
+    <div id="draggablecontainer">
+        <div id="streamWrapper">
+        </div>
+
+        <div id="tabs">
+            <ul>
+                <li><a href="#tabs-1">STREAMS</a></li>
+                <li><a href="#tabs-2">NEWS</a></li>
+                <li><a href="#tabs-3">COMMENTS</a></li>
+            </ul>
+            <div id="tabs-1">
+            	<span class="tabtitle">Live Streams</span>
+                <ul class="tabcontent" id="streamlist"></ul>            
+            </div>
+            <div id="tabs-2">
+                <!--Facebook posts -->
+
+                <div id="fb-root"></div>
+    
+                <div class="fb-post" data-href="https://www.facebook.com/streamverse/posts/169845139888390" data-width="550">
+                    <div class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/streamverse/posts/169845139888390">Post</a> by <a href="https://www.facebook.com/streamverse">streamverse.tv</a>.</div>
+                </div>
+                <br>
+                
+               
+                <div class="fb-post" data-href="https://www.facebook.com/photo.php?fbid=153012148238356&amp;set=a.153012144905023.1073741828.150577561815148&amp;type=1" data-width="550">
+                    <div class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/photo.php?fbid=153012148238356&amp;set=a.153012144905023.1073741828.150577561815148&amp;type=1">Post</a> by <a href="https://www.facebook.com/streamverse">streamverse.tv</a>.</div>
+                </div>
+                <!--Facebook posts END -->
+            </div>
+            <div id="tabs-3">
+                <div class="tabcontent" id="fbcomments">
+                
+                	<script>
+						FB.XFBML.parse();
+						(function(d, s, id) {
+						var js, fjs = d.getElementsByTagName(s)[0];
+						if (d.getElementById(id)) return;
+						js = d.createElement(s); js.id = id;
+						js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+						fjs.parentNode.insertBefore(js, fjs);
+						}(document, 'script', 'facebook-jssdk'));</script>
+					<span class="tabtitle">Comments</span>
+
+					<!--<div class="fb-comments" data-href="http://www.twitch.tv/asiagodtonegg3be0" data-numposts="5"></div> -->
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+
+
+    <!--Footer-->
+
+</body>
+
+
+
+</html>
+
+<script>
+
+    /*======Toggle Chat======*/
+    $("#togglechat").click(function () {
+        $("#chatbox").toggle("fold", 1000);
+    });
+
+    /*========Navigation=========*/
+    //Selecting an option in the menu will stay highlighted
+    $("#menubar li").click(function () {
+        $("#menubar li").removeClass("activeClick");
+        $(this).addClass("activeClick");
+    });
+</script>
