@@ -128,29 +128,16 @@ $(document).ready(function () {
     $(".hearthstone").click(function () {
         getStreamList(hearthList);
     });
+    
     /*Updates stream & chat of the player that was clicked on*/
-        $('#streamlist').click(function (evt) {
-            /*Gets the players name from id of clicked button*/
-            var clicked = evt.target;
-            var currentID = clicked.parentNode.id || "No ID!";
-            if (currentID != "No ID!") {
-                numOfActiveStreams=1;
-                $("#streamWrapper").empty();
-                updateStreamAndChat(currentID,700);
-            }
-        });
-
-
+//            /*Gets the players name from id of clicked button*/
+//            var clicked = evt.target;
+//            var currentID = clicked.parentNode.id || "No ID!";
+//            if (currentID != "No ID!") {
+//                numOfActiveStreams=1;
+//                $("#streamWrapper").empty();
+//                updateStreamAndChat(currentID,700);
+//            }
+//        });      
 });
-
-/*======Facebook=====*/
-(function (d, s, id) {
-    var js, fjs = d.getElementsByTagName(s)[0];
-    if (d.getElementById(id)) return;
-    js = d.createElement(s);
-    js.id = id;
-    js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
-    fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));
-
 
