@@ -20,7 +20,7 @@ var lolList = ["wickd","aphromoo","ESL_Australia","asiagodtonegg3be0","asusae920
 "trick2g","painkami","tsm_dyrus","tsm_theoddone","voyboy","wannabe1234","wong1224","x5tv2","yeetz","zynxyz"];
 
 
-var hearthList = "2gd,yellowpete,archonthewizard,athenelive,brotatoe,djwheat,ellohime,etup,hearthstoneclubru,itshafu,kungentv,lokazi,mg_jotto,mmoden,nl_kripp,novawar,rootcatz,ryuzilla,tastelesstv,trumpsc,voguestarcraft,wowhobbs,";
+var hearthList = ["2gd","yellowpete","archonthewizard","athenelive","brotatoe","djwheat","ellohime","etup","hearthstoneclubru","itshafu","kungentv","lokazi","mg_jotto","mmoden","nl_kripp","novawar","rootcatz","ryuzilla","tastelesstv","trumpsc","voguestarcraft","wowhobbs"];
 var numOfActiveStreams = 0;
 /*========================== Functions ==========================*/
 /*Function retrieves json object from the players currently live streaming and displays on playerList.*/
@@ -29,17 +29,10 @@ var numOfActiveStreams = 0;
 function getStreamList(streamPlayerList) {
         $(".streams").remove();
         $(".streamlist").append('<img id="loadingGIF" src="loading.gif" >');
-        console.log("HERE: " + streamPlayerList.length);
         for (var i = 0; i < streamPlayerList.length; i++) {
             $.getJSON("https://api.twitch.tv/kraken/streams/" + streamPlayerList[i] + "/?callback=?", function(data) {
-                //data.sort(function (a, b) {
-                //   return b.channel_count - a.channel_count;
-                //}); //sort list of streams by viewers
-
                 $("#loadingGIF").remove();
                 if (data.stream != null) {
-                    console.log(data);
-                    console.log("name " + data.stream.channel.name);
                     $("#streamlist").append('<li id="' + data.stream.channel.name + '" class="streams"' + '"></li>');
                     $('#' + data.stream.channel.name).append('<img class="small_img" src="' + data.stream.channel.logo + '">');
                     $('#' + data.stream.channel.name).append('<img class="cap_img" src="' + data.stream.preview.medium + '">');
